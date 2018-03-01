@@ -1,0 +1,8 @@
+/Users/Guest/Desktop/Library.Solutions/Library/bin/Debug/netcoreapp1.1/LibraryApp.deps.json
+/Users/Guest/Desktop/Library.Solutions/Library/bin/Debug/netcoreapp1.1/LibraryApp.runtimeconfig.json
+/Users/Guest/Desktop/Library.Solutions/Library/bin/Debug/netcoreapp1.1/LibraryApp.runtimeconfig.dev.json
+/Users/Guest/Desktop/Library.Solutions/Library/obj/Debug/netcoreapp1.1/LibraryApp.AssemblyInfo.cs
+/Users/Guest/Desktop/Library.Solutions/Library/bin/Debug/netcoreapp1.1/LibraryApp.dll
+/Users/Guest/Desktop/Library.Solutions/Library/bin/Debug/netcoreapp1.1/LibraryApp.pdb
+/Users/Guest/Desktop/Library.Solutions/Library/obj/Debug/netcoreapp1.1/LibraryApp.dll
+/Users/Guest/Desktop/Library.Solutions/Library/obj/Debug/netcoreapp1.1/LibraryApp.pdb

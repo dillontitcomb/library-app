@@ -5,10 +5,10 @@ using System;
 
 namespace LibraryApp.Controllers
 {
-  public class HomeController : Controller
+  public class PatronController : Controller
   {
-    [HttpGet("/")]
-    public ActionResult Index()
+    [HttpGet("/patron/landing")]
+    public ActionResult PatronLanding()
     {
       return View();
     }

@@ -1,8 +1,9 @@
 using System.Collections.Generic;
-using MySql.Data.MySqlAuthor;
+using MySql.Data.MySqlClient;
 using System;
 using Microsoft.AspNetCore.Mvc;
 using LibraryApp;
+using LibraryApp.Models;
 
 namespace LibraryApp.Models
 {
@@ -33,13 +34,46 @@ namespace LibraryApp.Models
         return (idEquality && clientEquality);
       }
     }
-    public int GetId()
+    public int GetAuthorId()
     {
       return _authorId;
     }
-    public int GetAuthorName()
+    public string GetAuthorName()
     {
       return _authorName;
     }
-  }
-}
+
+    public void SaveAuthor()
+    {
+         MySqlConnection conn = DB.Connection();
+         conn.Open();
+
+         var cmd = conn.CreateCommand() as MySqlCommand;
+         cmd.CommandText = @"Insert INTO authors (author_id, author_name, book_id) VALUES (@author_id, @author_name, @book_id);";
+
+         MySqlParameter authorId = new MySqlParameter();
+         authorId.ParameterName = "@author_id";
+         authorId.Value = this._authorId;
+         cmd.Parameters.Add(authorId);
+
+         MySqlParameter authorName = new MySqlParameter();
+         authorName.ParameterName = "@author_name";
+         authorName.Value = this._authorName;
+         cmd.Parameters.Add(authorName);
+
+         MySqlParameter bookId = new MySqlParameter();
+         bookId.ParameterName = "@book_id";
+         bookId.Value = this._bookId;
+         cmd.Parameters.Add(bookId);
+
+         cmd.ExecuteNonQuery();
+         _authorId = (int) cmd.LastInsertedId;
+
+         conn.Close();
+         if (conn != null)
+           {
+             conn.Dispose();
+           }
+         }
+       }
+     }
